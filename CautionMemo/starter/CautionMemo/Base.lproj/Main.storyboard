@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5VO-wq-Vsm">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--폴더-->
+        <scene sceneID="vBv-gG-qla">
+            <objects>
+                <viewController id="k6z-y5-tZD" customClass="FolderViewController" customModule="CautionMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FMA-Yg-vP7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1kw-Is-IC1">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="folder_cell" editingAccessoryType="checkmark" id="stk-aA-vlA">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="stk-aA-vlA" id="pBq-VJ-d7l">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rNL-KL-T6d" kind="show" id="HnW-0c-6pd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="k6z-y5-tZD" id="wOg-Ya-ttV"/>
+                                    <outlet property="delegate" destination="k6z-y5-tZD" id="fzZ-X0-yld"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xot-Bz-Rra">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e9L-u4-RdF"/>
+                                    <barButtonItem title="새로운 폴더" id="HLO-ZU-9JB">
+                                        <connections>
+                                            <action selector="addFolder:" destination="k6z-y5-tZD" id="GAb-Q5-S4m"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xot-Bz-Rra" firstAttribute="bottom" secondItem="yCq-ez-Obp" secondAttribute="bottom" id="78a-4k-iba"/>
+                            <constraint firstItem="yCq-ez-Obp" firstAttribute="leading" secondItem="1kw-Is-IC1" secondAttribute="leading" id="8pU-vq-ouM"/>
+                            <constraint firstItem="yCq-ez-Obp" firstAttribute="top" secondItem="1kw-Is-IC1" secondAttribute="top" id="QFw-uj-kWT"/>
+                            <constraint firstItem="Xot-Bz-Rra" firstAttribute="leading" secondItem="yCq-ez-Obp" secondAttribute="leading" id="Vhb-yp-Q31"/>
+                            <constraint firstItem="Xot-Bz-Rra" firstAttribute="top" secondItem="1kw-Is-IC1" secondAttribute="bottom" id="eP4-xP-Ff2"/>
+                            <constraint firstItem="yCq-ez-Obp" firstAttribute="trailing" secondItem="1kw-Is-IC1" secondAttribute="trailing" id="jGW-zx-4hW"/>
+                            <constraint firstItem="Xot-Bz-Rra" firstAttribute="trailing" secondItem="yCq-ez-Obp" secondAttribute="trailing" id="xNN-rv-yVf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yCq-ez-Obp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="폴더" id="g4T-k4-Y5Y"/>
+                    <connections>
+                        <outlet property="folderTableView" destination="1kw-Is-IC1" id="8AT-ES-pyL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7l-3E-WoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864" y="-569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U7Q-tU-pYT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5VO-wq-Vsm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="yNN-kg-VIf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k6z-y5-tZD" kind="relationship" relationship="rootViewController" id="LQ1-Lm-qLn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIa-iw-JaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="-567"/>
+        </scene>
+        <!--메모-->
+        <scene sceneID="2tQ-mh-0Ap">
+            <objects>
+                <viewController id="rNL-KL-T6d" customClass="MemoViewController" customModule="CautionMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mNY-KU-lnz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-7w-a8e">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memo_cell" id="KRw-6t-adN">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KRw-6t-adN" id="N7c-7N-NLm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rNL-KL-T6d" id="OLx-lX-Pcb"/>
+                                    <outlet property="delegate" destination="rNL-KL-T6d" id="eBS-5Z-of1"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXF-Fn-75x">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KLO-qE-bNg"/>
+                                    <barButtonItem title="0개의 메모" id="AdS-vf-2js">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="igz-ml-ODA"/>
+                                    <barButtonItem title="Item" systemItem="add" id="BgT-lA-i6F">
+                                        <connections>
+                                            <action selector="didTapAddMemo:" destination="rNL-KL-T6d" id="a1k-gc-WKh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F3B-qQ-L9H" firstAttribute="leading" secondItem="tS8-7w-a8e" secondAttribute="leading" id="Q0B-wO-C8Z"/>
+                            <constraint firstItem="F3B-qQ-L9H" firstAttribute="top" secondItem="tS8-7w-a8e" secondAttribute="top" id="Vpt-pK-1fx"/>
+                            <constraint firstItem="bXF-Fn-75x" firstAttribute="bottom" secondItem="F3B-qQ-L9H" secondAttribute="bottom" id="hpm-UC-gY5"/>
+                            <constraint firstItem="bXF-Fn-75x" firstAttribute="top" secondItem="tS8-7w-a8e" secondAttribute="bottom" id="j9s-wr-lbD"/>
+                            <constraint firstItem="bXF-Fn-75x" firstAttribute="leading" secondItem="F3B-qQ-L9H" secondAttribute="leading" id="jel-eq-LOz"/>
+                            <constraint firstItem="F3B-qQ-L9H" firstAttribute="trailing" secondItem="tS8-7w-a8e" secondAttribute="trailing" id="qAR-J7-uKI"/>
+                            <constraint firstItem="bXF-Fn-75x" firstAttribute="trailing" secondItem="F3B-qQ-L9H" secondAttribute="trailing" id="qz0-78-uvs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F3B-qQ-L9H"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="메모" id="Sm1-gp-TFs"/>
+                    <connections>
+                        <outlet property="memoCountIem" destination="AdS-vf-2js" id="jOY-n0-Zu6"/>
+                        <outlet property="memoTableView" destination="tS8-7w-a8e" id="mHb-wk-Hw7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9K5-Wu-B0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2630" y="-569"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
