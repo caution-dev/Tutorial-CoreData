@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Folder" representedClassName="Folder" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="memos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Memo" inverseName="folder" inverseEntity="Memo" syncable="YES"/>
+    </entity>
+    <entity name="Memo" representedClassName="Memo" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="memos" inverseEntity="Folder" syncable="YES"/>
+    </entity>
+    <fetchRequest name="CoreFolder" entity="Folder" predicateString="title CONTAINS &quot;Core&quot;"/>
+    <elements>
+        <element name="Memo" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Folder" positionX="-257.55078125" positionY="-17.87109375" width="128" height="73"/>
+    </elements>
+</model>
